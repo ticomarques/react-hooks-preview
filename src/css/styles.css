@@ -1,0 +1,15 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+.mainTitle{
+    text-align: center;
+}
+.card {
+    border: 1px solid #666;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+.card:hover {
+    border: 2px solid #999
+}
