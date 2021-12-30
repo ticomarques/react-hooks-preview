@@ -10,7 +10,7 @@ It is an alternative for Redux and React-Redux, and built-in React features.
 3 - import context and reducer in the app file.
 4 - const [ state, dispatch] =  useReducer(reducer from step2)
 5 - Use the context (step1) as a wrapper around the <app /> and declare value={{state, dispatch}}
-6 - now you can use the context in the pages and components, just use: const { state, dispatch } = useContext(context from step1)
+6 - now you can use the context in the pages and components, just use: const { state, dispatch } = useContext(context from step1) - dont forget to import useContext from react, and the reducer (from step 2)
 
 
 useEffect for basic lyfecycle control.

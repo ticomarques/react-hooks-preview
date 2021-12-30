@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useReducer } from 'react'
 
-
 //context and reducer
 import productsReducer from '../reducers/products'
 import ProductsContext from '../context/ProductsContext'
-
 //components
 import ProductList from './ProductList'
 import AddProductForm from './AddProductForm'
@@ -12,9 +10,7 @@ import AddProductForm from './AddProductForm'
 import Modal from 'react-modal';
 
 const ProductApp = () => {
-    
     const [products, dispatch] = useReducer(productsReducer, [])
-
 
     Modal.setAppElement('#root');
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -24,7 +20,6 @@ const ProductApp = () => {
     const closeModal = () => {
         setIsOpen(false);
     }
-
 
 
     //esse hook abaixo vai rodar quando montar pela primeira vez (componentDidMount)
@@ -38,6 +33,7 @@ const ProductApp = () => {
     }, [])
 
     //Esse hook abaixo vai rodar quando o state products sofrer alguma alteracao
+    //qualquer alteracao em state products, ele ja salva no localStorage
     useEffect(() => {
         localStorage.setItem('products', JSON.stringify(products))
     }, [products])
@@ -48,7 +44,7 @@ const ProductApp = () => {
         <ProductsContext.Provider value={{ products, dispatch }}>
             <div className="container">
                 <h1 className="mainTitle">Products</h1>
-                <ProductList products={products}/>
+                <ProductList />
                 <button onClick={openModal}>Add</button>
             </div>
             <Modal
